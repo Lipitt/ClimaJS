@@ -2,7 +2,7 @@ class OpenWeather {
 
   constructor(){
     /*
-    la api key queda visible porque es imposible ocultarla sin que la app use algun framework de
+    la api key queda vacia porque es imposible ocultarla sin que la app use algun framework de
     front end (angular, react, vue.js) y la intencion es que sea solo vanilla javascript.
     sin mencionar que incluso usando un framework, no estaria 100% oculta ya que es una aplicacion que 
     no tiene servidor.
