@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/cerulean/bootstrap.min.css"
+    />
+    <style>
+      .temp {
+        display: inline-block;
+      }
+    </style>
+    <title>ClimaJS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
+          <h1 id="c-ubicacion">Elija una Ubicación</h1>
+          <h3 id="c-desc"></h3>
+          <h3 id="c-temp"></h3>
+          <h5 id="c-tempMin" class="temp"></h5>
+          <h5 id="c-tempMax" class="temp"></h5>
+          <br />
+          <img id="c-img" />
+          <ul class="list-group mt-3" id="c-detalles">
+            <li class="list-group-item" id="c-senTermica"></li>
+            <li class="list-group-item" id="c-humedad"></li>
+            <li class="list-group-item" id="c-presion"></li>
+            <li class="list-group-item" id="c-viento"></li>
+            <li class="list-group-item" id="c-visibilidad"></li>
+          </ul>
+          <hr />
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#locModal"
+            data-backdrop="static"
+          >
+            Cambiar Ciudad
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="p-3 mt-5 text-center text-black-50">
+      Datos proporcionados por
+      <br />
+      <a href="https://openweathermap.org/" target="_blank"
+        ><img src="logo.png"
+      /></a>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="locModal"
+      tabindex="-1"
+      aria-labelledby="locModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locModalLabel">Elegir ubicación</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="modal-form">
+              <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="input-ciudad" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="Pais">Pais</label>
+                <input type="text" id="input-pais" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              id="c-btnGuardar"
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="almacenamiento.js"></script>
+    <script src="openweather.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
