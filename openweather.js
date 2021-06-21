@@ -7,7 +7,7 @@ class OpenWeather {
     sin mencionar que incluso usando un framework, no estaria 100% oculta ya que es una aplicacion que 
     no tiene servidor.
      */
-    this.apiKey = "";
+    this.apiKey = process.env.API_KEY;
   }
 
   //esta funcion fetchea los datos de la api y los devuelve despues de pasarlos a objetos.
